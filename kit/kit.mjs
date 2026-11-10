@@ -504,7 +504,7 @@ const COMMANDS = {
       add(hasRemote(), '仓库连着 GitHub（origin）', '还没连，改动只在本地');
       if (hasRemote()) {
         const ls = git(['ls-remote', '--heads', 'origin'], { ok: true });
-        add(ls.ok, '能读 GitHub 上的仓库', '检查网络和登录');
+        add(ls.ok, '能读 GitHub 上的仓库', '检查网络和登录。电脑开着代理软件的话，git 不会自动走代理，要单独设：git config http.proxy http://127.0.0.1:<代理端口>');
         const dry = git(['push', '--dry-run', 'origin', branch()], { ok: true });
         add(dry.ok, '能往 GitHub 推', '没有写权限，或者没登录。推不上去的工具改用“投递包”（还没建）');
       }
