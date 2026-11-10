@@ -235,8 +235,9 @@ function onePagerText() {
   for (const [topic, list] of groups) {
     out.push(`【${topic}】`);
     for (const d of list) {
-      out.push(`- ${d.title}（${d.kv['谁定的'] || '?'}，${d.kv['时间'] || '?'}，编号 ${d.id}）`);
-      if (d.body && d.body !== d.title) out.push(...d.body.split('\n').map((l) => '  ' + l));
+      const lines = (d.body || d.title).split('\n').filter((l) => l.trim());
+      out.push(`- ${lines[0]}（${d.kv['谁定的'] || '?'}，${d.kv['时间'] || '?'}，编号 ${d.id}）`);
+      out.push(...lines.slice(1).map((l) => '  ' + l));
     }
   }
   return out.join('\n');
