@@ -1,0 +1,19 @@
+{
+  "people": [
+    {
+      "id": "lead",
+      "name": "队长",
+      "github": "historycrew5423-art",
+      "gitName": "historycrew5423-art",
+      "gitEmail": "338512773+historycrew5423-art@users.noreply.github.com",
+      "publisher": true
+    },
+    {
+      "id": "mate",
+      "name": "队友",
+      "github": "diexiewang-del",
+      "gitName": "diexiewang-del",
+      "gitEmail": "314113561+diexiewang-del@users.noreply.github.com"
+    }
+  ]
+}
